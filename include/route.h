@@ -24,4 +24,12 @@ int addStopToRoute(struct Route *route, int stop_id);
 int deleteStopFromRoute(struct Route *route, int stop_id);
 void displayRouteStops(struct Route *route);
 
+int findRouteBetweenStops(
+    struct Route routes[],
+    int count,
+    int source_stop,
+    int destination_stop
+);
+
+
 #endif
