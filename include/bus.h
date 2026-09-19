@@ -2,6 +2,7 @@
 #define BUS_H
 
 #define MAX_BUSES 100
+#define MAX_BUS_CAPACITY 100
 
 struct Bus {
     int bus_id;
