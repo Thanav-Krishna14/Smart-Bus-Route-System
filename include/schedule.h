@@ -41,4 +41,10 @@ void sortSchedulesByDeparture(
     int count
 );
 
+void displaySchedulesForBus(
+    struct Schedule schedules[],
+    int count,
+    int bus_id
+);
+
 #endif
