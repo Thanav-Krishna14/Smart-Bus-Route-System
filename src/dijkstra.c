@@ -138,7 +138,7 @@ int findShortestPath(
         path[length] = current;
         length++;
 
-        if (length >= MAX_PATH)
+        if (length >= MAX_DIJKSTRA_PATH)
         {
             printf("Path is too long.\n");
             *pathLength = 0;
