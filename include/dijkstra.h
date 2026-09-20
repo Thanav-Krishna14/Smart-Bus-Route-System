@@ -3,7 +3,7 @@
 
 #include "graph.h"
 
-#define MAX_PATH 100
+#define MAX_DIJKSTRA_PATH 100
 
 int findShortestPath(
     struct Graph *graph,
