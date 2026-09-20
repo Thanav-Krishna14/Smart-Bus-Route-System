@@ -29,9 +29,9 @@ int addStop(struct Stop stops[], int *count)
     printf("Enter Stop ID: ");
     scanf("%d", &stop_id);
 
-    if (stop_id <= 0)
+    if (stop_id <= 0 || stop_id > MAX_STOPS)
     {
-        printf("Stop ID must be positive.\n");
+        printf("Stop ID must be between 1 and %d.\n",MAX_STOPS);
         return 0;
     }
 
