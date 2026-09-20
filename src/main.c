@@ -862,7 +862,7 @@ void findShortestRoute(void)
     int source;
     int destination;
 
-    int path[MAX_PATH];
+    int path[MAX_DIJKSTRA_PATH];
     int pathLength = 0;
 
     printf("Enter Source Stop ID: ");
