@@ -472,7 +472,12 @@ void scheduleMenu(void)
                  * addSchedule() asks for these IDs again.
                  * This keeps the module independent.
                  */
-                addSchedule(schedules, &scheduleCount);
+                addSchedule(
+                            schedules,
+                            &scheduleCount,
+                            bus_id,
+                            route_id
+                            );
 
                 break;
             }
