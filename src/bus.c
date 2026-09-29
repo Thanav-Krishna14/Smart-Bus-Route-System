@@ -84,7 +84,7 @@ int deleteBus(struct Bus buses[], int *count, int bus_id)
     return 1;
 }
 
-int updateBus(struct Bus buses[], int count, int bus_id, int route_id);
+int updateBus(struct Bus buses[], int count, int bus_id, int route_id)
 {
     int index = searchBus(buses, count, bus_id);
 
