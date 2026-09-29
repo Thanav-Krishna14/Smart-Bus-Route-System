@@ -84,7 +84,7 @@ int deleteBus(struct Bus buses[], int *count, int bus_id)
     return 1;
 }
 
-int updateBus(struct Bus buses[], int count, int bus_id)
+int updateBus(struct Bus buses[], int count, int bus_id, int route_id);
 {
     int index = searchBus(buses, count, bus_id);
 
@@ -105,14 +105,7 @@ int updateBus(struct Bus buses[], int count, int bus_id)
         return 0;
     }
 
-    printf("Enter new Route ID: ");
-    scanf("%d", &buses[index].route_id);
-
-    if (buses[index].route_id <= 0)
-    {
-        printf("Invalid Route ID.\n");
-        return 0;
-    }
+   buses[index].route_id = route_id;
 
     printf("Bus updated successfully.\n");
 
