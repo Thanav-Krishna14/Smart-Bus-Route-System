@@ -41,7 +41,12 @@ int searchSchedule(
     return -1;
 }
 
-int addSchedule(struct Schedule schedules[], int *count)
+int addSchedule(
+    struct Schedule schedules[],
+    int *count,
+    int bus_id,
+    int route_id
+)
 {
     if (*count >= MAX_SCHEDULES)
     {
@@ -66,23 +71,8 @@ int addSchedule(struct Schedule schedules[], int *count)
         return 0;
     }
 
-    printf("Enter Bus ID: ");
-    scanf("%d", &schedules[*count].bus_id);
-
-    if (schedules[*count].bus_id <= 0)
-    {
-        printf("Invalid Bus ID.\n");
-        return 0;
-    }
-
-    printf("Enter Route ID: ");
-    scanf("%d", &schedules[*count].route_id);
-
-    if (schedules[*count].route_id <= 0)
-    {
-        printf("Invalid Route ID.\n");
-        return 0;
-    }
+   schedules[*count].bus_id = bus_id;
+   schedules[*count].route_id = route_id;
 
     printf("Enter Departure Time (HHMM): ");
     scanf("%d", &schedules[*count].departure_time);
