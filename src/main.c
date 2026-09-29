@@ -153,10 +153,30 @@ void busMenu(void)
                 break;
 
             case 3:
-                printf("Enter Bus ID to update: ");
-                scanf("%d", &bus_id);
-                updateBus(buses, busCount, bus_id);
-                break;
+                {
+                int new_route_id;
+
+    printf("Enter Bus ID to update: ");
+    scanf("%d", &bus_id);
+
+    printf("Enter new Route ID: ");
+    scanf("%d", &new_route_id);
+
+    if (searchRoute(routes, routeCount, new_route_id) == -1)
+    {
+        printf("Route not found.\n");
+        break;
+    }
+
+    updateBus(
+        buses,
+        busCount,
+        bus_id,
+        new_route_id
+    );
+
+    break;
+                }
 
             case 4:
                 displayBuses(buses, busCount);
