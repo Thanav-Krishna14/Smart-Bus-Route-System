@@ -825,6 +825,22 @@ void adminMenu(void)
     } while (choice != 9);
 }
 
+
+/* ==================== AI DEMAND FORECAST ==================== */
+
+void forecastPassengerDemand(void)
+{
+    printf("\nLaunching AI Demand Forecast...\n");
+
+    int result = system("python ai/demand_forecast.py");
+
+    if (result == -1)
+    {
+        printf("Could not launch the Python forecast program.\n");
+    }
+}
+
+
 /* ==================== USER FUNCTIONS ==================== */
 
 void findRoute(void)
@@ -1052,8 +1068,8 @@ void userMenu(void)
         printf("5. Find Shortest Route\n");
         printf("6. View Bus Schedule\n");
         printf("7. Join Passenger Queue\n");
-        printf("8. Logout\n");
-        printf("Enter your choice: ");
+        printf("8. Forecast Passenger Demand (AI)\n");
+        printf("9. Logout\n");
         scanf("%d", &choice);
 
         switch (choice)
@@ -1087,14 +1103,19 @@ void userMenu(void)
                 break;
 
             case 8:
+                forecastPassengerDemand();
+                break;
+
+            case 9:
                 printf("User logged out.\n");
                 break;
+
 
             default:
                 printf("Invalid choice.\n");
         }
 
-    } while (choice != 8);
+    } while (choice != 9);
 }
 
 /* ==================== MAIN ==================== */
