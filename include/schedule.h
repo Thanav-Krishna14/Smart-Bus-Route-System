@@ -11,7 +11,12 @@ struct Schedule {
     int arrival_time;
 };
 
-int addSchedule(struct Schedule schedules[], int *count);
+int addSchedule(
+    struct Schedule schedules[],
+    int *count,
+    int bus_id,
+    int route_id
+);
 
 int deleteSchedule(
     struct Schedule schedules[],
